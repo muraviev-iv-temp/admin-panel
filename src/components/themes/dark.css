@@ -1,0 +1,133 @@
+.admin-panel_dark {
+    background-color: var(--night-white);
+}
+
+.admin-panel__default-text_dark,
+.grid__cell-text_dark,
+.column-filter__title_dark,
+.input__prefix_dark {
+    color: var(--night-black);
+}
+
+.admin-panel_dark input {
+    caret-color: var(--night-black);
+    color: var(--night-black);
+}
+
+.admin-panel__transparent-button_dark>p {
+    color: var(--blue);
+}
+
+.admin-panel__transparent-button_dark>svg {
+    fill: var(--blue);
+    stroke: var(--blue);
+}
+
+.admin-panel__blue-button_dark {
+    background-color: var(--blue);
+}
+
+.admin-panel__blue-button_dark>p {
+    color: var(--night-white);
+}
+
+.admin-panel__blue-button_dark>svg {
+    fill: var(--night-white);
+    stroke: var(--night-white);
+}
+
+.admin-panel__popup_dark {
+    background-color: var(--night-white);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2), 0px 6px 12px rgba(0, 0, 0, 0.3), 0px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.admin-panel__red-button_dark>p {
+    color: var(--white);
+}
+
+.admin-panel__red-button_dark>svg {
+    fill: var(--white);
+    stroke: var(--white);
+}
+
+.admin-panel__red-button_dark {
+    background-color: var(--red);
+}
+
+.grid__filter-detail_dark, .grid__footer_dark {
+    background-color: var(--night-white-blue);
+}
+
+.grid__text-filter-input_dark svg {
+    fill: var(--blue);
+    stroke: var(--blue);
+}
+
+.grid__filter_dark .input {
+    background: var(--night-white);
+    border: 1px solid var(--blue);
+}
+
+.grid__row_dark {
+    border-bottom: 1px var(--night-white-blue) solid;
+}
+
+
+.admin-panel_dark input::-webkit-input-placeholder,
+.admin-panel_dark input:-ms-input-placeholder {
+    color: var(--night-light-blue);
+}
+.admin-panel_dark input::-moz-placeholder,
+.admin-panel_dark input:-moz-placeholder {
+    color: var(--night-light-blue);
+    opacity: 1;
+}
+
+.grid__header-cell-text_dark {
+    color: var(--night-white-blue);
+}
+
+.grid__header-cell-sort_dark svg {
+    fill: var(--night-white-blue);
+    stroke: var(--night-white-blue);
+}
+
+.grid__header_dark {
+    background-color: var(--blue);
+}
+
+
+.theme-switch__popup-item_dark {
+    background-color: var(--blue);
+}
+
+.theme-switch__popup-item_dark svg {
+    fill: var(--white);
+    stroke: var(--white);
+}
+
+.theme-switch__popup-item_dark p {
+    color: var(--white);
+}
+
+.admin-panel__popup_dark>.popup__content {
+    background-color: var(--night-white);
+}
+
+.grid__footer-selection-count_dark {
+    color: var(--blue);
+}
+
+.grid__pagination-item_current_dark {
+    color: var(--night-white);
+}
+
+.enum-cell_declined_dark svg {
+    stroke: var(--night-black);
+    fill: var(--night-black);
+}
+
+.enum-cell_dark p {
+    opacity: 0.5;
+    fill: var(--night-black);
+}

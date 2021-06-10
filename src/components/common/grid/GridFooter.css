@@ -1,0 +1,33 @@
+.grid__footer {
+    height: 40px;
+    width: 100%;
+    display: flex;
+}
+
+.grid__footer-selection {
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 8px;
+    flex-grow: 1;
+}
+
+.grid__footer-item {
+    margin: 0 8px;
+}
+
+.grid__footer-button {
+    height: 24px;
+    padding: 4px 0;
+}
+
+.grid__footer-pagination {
+    height: 100%;
+    margin: 0 4px;
+}
+
+.grid__footer-selection-count {
+    font-size: 13px;
+    line-height: 16px;
+    color: #459DF5;
+    margin: 0;
+}

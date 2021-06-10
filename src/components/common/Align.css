@@ -1,0 +1,9 @@
+.align {
+    display: table;    
+    height: 100%;
+}
+
+.align__content {
+    display: table-cell;
+    vertical-align: middle;
+}

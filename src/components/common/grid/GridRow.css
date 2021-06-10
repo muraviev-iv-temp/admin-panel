@@ -1,0 +1,10 @@
+.grid__row{
+    display: flex;
+    height: 40px;
+    padding: 0 8px;
+    border-bottom: 1px;
+}
+
+.grid__row :last-child{
+    flex: 4 1;
+}

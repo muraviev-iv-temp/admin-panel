@@ -1,0 +1,79 @@
+.admin-panel_light {
+    background-color: var(--white);
+}
+
+.admin-panel__transparent-button_light>p {
+    color: var(--blue);
+}
+
+.admin-panel__transparent-button_light>svg {
+    fill: var(--blue);
+    stroke: var(--blue);
+}
+
+.admin-panel__blue-button_light {
+    background-color: var(--blue);
+}
+
+.admin-panel__blue-button_light>p, .admin-panel__red-button_light>p {
+    color: var(--white);
+}
+
+.grid__row_light {
+    border-bottom: 1px var(--white-blue) solid;
+}
+
+.admin-panel__blue-button_light>svg, .admin-panel__red-button_light>svg {
+    fill: var(--white);
+    stroke: var(--white);
+}
+
+.admin-panel__red-button_light {
+    background-color: var(--red);
+}
+
+.admin-panel_light input::-webkit-input-placeholder, .admin-panel_light input:-ms-input-placeholder{
+    color: var(--light-blue);
+}
+.admin-panel_light input::-moz-placeholder, .admin-panel_light input:-moz-placeholder {
+    color: var(--light-blue);
+    opacity: 1;
+}
+
+.grid__filter-detail_light {
+    background: var(--white-blue);
+}
+
+.grid__filter_light .input {
+    background: var(--white);
+    border: 1px solid var(--blue);
+}
+
+.grid__footer_light {
+    background-color: var(--white-blue);
+}
+
+.theme-switch__popup-item_light {
+}
+
+.theme-switch__popup-item_light svg {
+    fill: var(--blue);
+    stroke: var(--blue);
+}
+
+.theme-switch__popup-item_light p {
+    color: var(--blue);
+}
+
+.grid__text-filter-input_light svg {
+    fill: var(--blue);
+    stroke: var(--blue);
+}
+
+.admin-panel__popup_light {
+    background-color: var(--white);
+}
+
+.grid__footer-selection-count_light {
+    color: var(--blue);
+}

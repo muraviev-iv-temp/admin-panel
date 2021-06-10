@@ -1,0 +1,24 @@
+.button {
+    height: 32px;
+    display: flex;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 1px solid black; 
+}
+
+.button>svg {
+    margin: 0 8px 0 8px;
+    width: 16px;
+    height: 16px;
+}
+
+.button>p {
+    margin: 0 8px 0 0;
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+}
