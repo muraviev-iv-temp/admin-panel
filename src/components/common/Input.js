@@ -88,7 +88,8 @@ export function Input(props) {
                 {state.droppedDown && popupItems && (
                     <Popup className = {getThemedClassName(['admin-panel__popup'], classModificator)} onClose = {onPopupClose}>
                         {popupItems.map(item => (
-                            <div onClick = {() => onItemSelected(item)} className = "enum-filter__popup-item">
+                            <div onClick = {() => onItemSelected(item)} 
+                                    className = {getThemedClassName(['enum-filter__popup-item'], classModificator)}>
                                 <Align>
                                     <p>{item.text}</p>
                                 </Align>

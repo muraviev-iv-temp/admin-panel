@@ -77,3 +77,12 @@
 .grid__footer-selection-count_light {
     color: var(--blue);
 }
+
+.enum-cell_declined_light p {
+    color: var(--black);
+}
+
+.enum-cell_declined_light svg {
+    fill: var(--black);
+    stroke: var(--black);
+}

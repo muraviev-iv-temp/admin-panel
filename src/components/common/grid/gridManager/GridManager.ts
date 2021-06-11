@@ -14,7 +14,6 @@ export class GridManager implements IGridManager {
             if(!this.findProcessor(column, true)) 
                 switch (column.type) {
                     case "enum":  
-                    console.log(column.values)
                         this.processors.push(new EnumColumnProcessor(column.id, column.values || []));
                         break;
                     case "number":

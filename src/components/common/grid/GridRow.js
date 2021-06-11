@@ -3,7 +3,7 @@ import { GridCheckCell } from "./GridCheckCell";
 import { getThemedClassName } from "../../../common/utils";
 
 export function GridRow(props) {
-    const { rowData, columns, classModificator, gridManager } = props;
+    const { rowData, columns, classModificator, gridManager, checked, onCheck } = props;
     const cells = columns.map((column) => {
         const processor = gridManager.findProcessor(column);
         const Cell = processor.getCellComponent()
@@ -14,13 +14,13 @@ export function GridRow(props) {
         )        
     });
 
-    const onCheckCellClick = () => {
-        alert(34)
+    const onCheckCellClick = (checked) => {
+        onCheck && onCheck(checked, rowData.id)
     }
 
     return (
         <div className = {getThemedClassName(['grid__row'], classModificator)}>
-            <GridCheckCell onClick = {onCheckCellClick} />
+            <GridCheckCell checked = {!!checked} onCheck = {onCheckCellClick} />
             {cells}
         </div>
     );

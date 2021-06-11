@@ -16,6 +16,10 @@
     letter-spacing: -0.2px;
 }
 
+.theme-switch__popup>.popup__content {
+    padding: 8px 16px;
+}
+
 .theme-switch__popup-item {
     width: 128px;
     height: 32px;
@@ -32,4 +36,10 @@
     font-size: 13px;
     line-height: 16px;
     margin: 0;
+}
+
+.theme-switch__caption {
+    font-size: 13px;
+    line-height: 16px;
+    margin: 8px 0;
 }

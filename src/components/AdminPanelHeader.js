@@ -1,11 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { getThemedClassName, SVG } from '../common/utils';
+import { getThemedClassName } from '../common/utils';
 import './AdminPanelHeader.css'
 import { Button } from './common/Button';
 import './AdminPanelButtons.css'
 import { useState } from 'react';
 import { Popup } from './common/Popup';
-import { Align } from './common/Align';
 import { applyTheme } from '../redux/actionCreators';
 
 function ThemeSwitchSelector() {
@@ -23,15 +22,18 @@ function ThemeSwitchSelector() {
             text = {currentTheme.title + ' тема'} 
             className = {getThemedClassName(["admin-panel__transparent-button"], currentTheme?.name)}>
             {state.droppedDown && (
-                <Popup className = {getThemedClassName(['admin-panel__popup'], currentTheme?.name)}>
+                <Popup className = {getThemedClassName(['admin-panel__popup', 'theme-switch__popup'], currentTheme?.name)}>
+                    <p className = {getThemedClassName(['theme-switch__caption'], currentTheme?.name)}>
+                        Выберите тему
+                    </p>
                     {themes.map(theme => {
-                        const Icon = SVG[theme.icon]
                         return (
-                            <div onClick = {() => changeTheme(theme)} 
-                                className = {"theme-switch__popup-item theme-switch__popup-item_" + theme.name} >
-                                <Align><Icon /></Align>
-                                <Align><p>{theme.title}</p></Align>
-                            </div>
+                            <Button icon = {theme.icon} 
+                                className = {getThemedClassName([
+                                    theme.name === currentTheme?.name ? 'admin-panel__blue-button' : 'admin-panel__transparent-button'
+                                ], currentTheme?.name)}
+                                text = {theme.title}
+                                onClick = {() => changeTheme(theme)} />
                         )
                     })}
                 </Popup>

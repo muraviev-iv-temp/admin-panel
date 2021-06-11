@@ -13,7 +13,6 @@ export class EnumColumnProcessor extends ColumnProcessor implements IColumnProce
     }
     getCellData = (row: object, fieldName: string) => {
         const id: string = this.extractObjectValue(row, fieldName);
-        console.log(this.items)
         const item: IEnumItem = this.items.find((enumItem) => enumItem.id === id) || {id: '', text: 'error', icon: ''};
         return {id, text: item.text, icon: item.icon};
     }

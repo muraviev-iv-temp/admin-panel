@@ -14,7 +14,8 @@ export function PlainTextCell(props) {
 }
 
 export function EnumCell(props) {
-    const {id, text, icon, classModificator} = props.data;
+    const {id, text, icon} = props.data;
+    const { classModificator } = props;
     const Icon = SVG[icon];
     return (
         <div className = {getThemedClassName(['enum-cell', `enum-cell_${id}`], classModificator)}>

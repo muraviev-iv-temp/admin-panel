@@ -3,7 +3,7 @@ import { getThemedClassName, SVG } from "./../../../common/utils"
 import { GridCheckCell } from "./GridCheckCell";
 
 export function GridHeader(props) {
-    const {columns, classModificator} = props
+    const {columns, classModificator, onCheck, checked} = props
     const renderSort = (column) => {
         if(column.sortable) 
             return (
@@ -16,7 +16,7 @@ export function GridHeader(props) {
 
     return (
         <div className = {getThemedClassName(['grid__header'], classModificator)}>
-            <GridCheckCell classModificator = {classModificator} />
+            <GridCheckCell checked = {checked} onCheck = {onCheck} classModificator = {classModificator} />
             {columns.map(column => (
                 <div key = {column.id} className = {getThemedClassName(['grid__header-cell'], classModificator)}>
                     <div>

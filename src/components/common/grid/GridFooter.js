@@ -5,8 +5,7 @@ import "./GridFooter.css"
 import { GridPagination } from "./GridPagination";
 
 export function GridFooter(props) {
-    const {classModificator} = props;
-    const selectedCount = 5
+    const {classModificator, selectedCount, pagination, onChangePage} = props;
     return (
         <div className = {getThemedClassName(['grid__footer'], classModificator)}>
             <div className = 'grid__footer-selection'>
@@ -22,7 +21,7 @@ export function GridFooter(props) {
             </div>
             <div className = "grid__footer-pagination">
                 <Align>
-                    <GridPagination classModificator = {classModificator} />
+                    <GridPagination pagination = {pagination} onChangePage = {onChangePage} classModificator = {classModificator} />
                 </Align>
             </div>
         </div>

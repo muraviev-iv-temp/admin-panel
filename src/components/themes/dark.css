@@ -106,6 +106,10 @@
     stroke: var(--white);
 }
 
+.theme-switch__caption_dark {
+    color: var(--night-black);
+}
+
 .theme-switch__popup-item_dark p {
     color: var(--white);
 }
@@ -127,7 +131,19 @@
     fill: var(--night-black);
 }
 
-.enum-cell_dark p {
-    opacity: 0.5;
-    fill: var(--night-black);
+.enum-cell_declined_dark svg {
+    fill: var(---night-black);
+    stroke: var(--night-black);
+}
+
+.enum-cell_declined_dark p,
+.enum-cell_new_dark p,
+.enum-cell_calc_dark p,
+.enum-cell_deferred_dark p,
+.enum-cell_confirmed_dark p {
+    color: var(--night-black);
+}
+
+.enum-filter__popup-item_dark p {
+    color: var(--night-black);
 }
