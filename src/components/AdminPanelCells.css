@@ -1,0 +1,39 @@
+.enum-cell svg {
+  margin-right: 4px;
+}
+.enum-cell_new svg {
+    stroke: #FF8C56;
+    fill: #FF8C56;
+}
+
+.enum-cell_deferred svg {
+    stroke: #FF8C56;
+    fill: #FF8C56;
+}
+
+.enum-cell_confirmed svg {
+    stroke: var(--blue);
+    fill: var(--blue);
+}
+
+.enum-cell_calc svg {
+    stroke: var(--blue);
+    fill: var(--blue);
+}
+
+.enum-cell_done svg {
+    stroke: #0FB864;
+    fill: #0FB864;
+}
+
+.enum-cell_done p {
+    color: #0FB864;
+}
+
+.enum-cell_declined svg {
+    opacity: 0.5;
+}
+
+.enum-cell_declined p {
+    opacity: 0.5;
+}

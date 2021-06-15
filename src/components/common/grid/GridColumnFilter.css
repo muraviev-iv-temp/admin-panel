@@ -1,0 +1,45 @@
+.column-filter__title {
+    margin: 0 0 8px 0;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.column-filter {
+    padding: 8px 0;
+    margin-right: 12px;
+}
+
+.column-filter__range {
+    display: flex;
+}
+
+.column-filter__input {
+    margin-right: 4px;
+}
+
+.date-filter__input {
+    width: 142px;
+}
+
+.sum-filter__input {
+    width: 126px;
+}
+
+.enum-filter__popup-item p {
+    line-height: 16px;
+    font-size: 13px;
+    margin: 0;
+}
+
+.enum-filter__popup-item {
+    display: flex;
+    padding: 8px;
+    width: 128px;
+    height: 32px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.enum-filter__popup-item:hover {
+    background-color: rgba(0,0,0,0.1);
+}

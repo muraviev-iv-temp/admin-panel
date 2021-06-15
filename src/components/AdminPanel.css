@@ -1,0 +1,26 @@
+:root {
+    --light-blue: #BAD8F5;
+    --blue: #459DF5;
+    --black: #000;
+    --white: #FFFFFF;
+    --red: #F53152;
+    --white-blue: #EBF0F5;
+
+    --night-white: #2B2D33;
+    --night-white-blue: #1F2629;
+    --night-black: #BCC4CC;
+    --night-light-blue: #454E52;
+}
+
+.admin-panel {
+    padding: 32px 48px 0 48px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.admin-panel div {
+    box-sizing: border-box;
+}
+  

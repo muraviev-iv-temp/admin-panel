@@ -1,0 +1,45 @@
+.admin-panel__header {
+    height: 32px;
+    display: flex;
+}
+
+.admin-panel__header h1 {
+    display: inline;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 32px;
+    letter-spacing: -0.2px;
+}
+
+.theme-switch__popup>.popup__content {
+    padding: 8px 16px;
+}
+
+.theme-switch__popup-item {
+    width: 128px;
+    height: 32px;
+    display: flex;
+    border-radius: 4px;
+}
+
+.theme-switch__popup-item svg {
+    width: 16px;
+    margin: 4px;
+}
+
+.theme-switch__popup-item p {
+    font-size: 13px;
+    line-height: 16px;
+    margin: 0;
+}
+
+.theme-switch__caption {
+    font-size: 13px;
+    line-height: 16px;
+    margin: 8px 0;
+}

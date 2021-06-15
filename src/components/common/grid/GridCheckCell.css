@@ -1,0 +1,10 @@
+.grid__check-cell {
+    flex: 0 0 16px;
+    margin: 0 8px;
+}
+
+.grid__check-cell input{
+    margin: 12px 0;
+    width: 16px;
+    height: 16px;
+}
