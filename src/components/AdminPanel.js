@@ -6,16 +6,29 @@ import './AdminPanel.css';
 import './AdminPanelCells.css';
 import './themes/light.css';
 import './themes/dark.css';
-import { fetchColumns, fetchOrders, fetchThemes } from "../redux/actionCreators";
+import { fetchColumns, fetchOrders, fetchThemes, removeOrders } from "../redux/actionCreators";
 import { useEffect } from "react";
 
 const AdminPanelGrid = (props) => {
+    const dispatch = useDispatch();
     const { classModificator } = props;
 
+    const { orders, pageNum, pagesCount } = useSelector(state => state.orders);
+
+    const onPageChange = (pageNum) => {
+        dispatch(fetchOrders(pageNum || 1));
+    }
+
+    const onDeleteRows = (ids) => {
+        dispatch(removeOrders(ids, pageNum))
+    }
+
     const columns = useSelector(state => state.columns.columns);
-    const orders = useSelector(state => state.orders.orders);
     return (<Grid columns = {columns} 
         rows = {orders} 
+        pagination = {{pageNum, pagesCount}}
+        onPageChange = {onPageChange}
+        onDeleteRows = {onDeleteRows}
         classModificator = {classModificator} />)
 }
 
@@ -25,7 +38,7 @@ export const AdminPanel = () => {
     useEffect(() => {
         dispatch(fetchThemes());
         dispatch(fetchColumns());
-        dispatch(fetchOrders());
+        dispatch(fetchOrders(1));
     })
     const currentTheme = useSelector(state => state?.themes?.currentTheme);
     

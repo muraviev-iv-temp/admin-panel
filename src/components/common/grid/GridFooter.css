@@ -31,3 +31,14 @@
     color: #459DF5;
     margin: 0;
 }
+
+.remove-dialog__button {
+    width: 128px;
+}
+
+.remove-dialog__caption {
+    font-size: 13px;
+    line-height: 16px;
+    margin: 8px 0 0 0;
+
+}

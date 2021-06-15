@@ -2,24 +2,24 @@ import { getThemedClassName } from '../../../common/utils';
 import './GridPagination.css';
 
 export function GridPagination(props) {
-    const { classModificator, pagination, onChangePage } = props;
+    const { classModificator, pagination, onPageChange } = props;
     const visiblePagesRange = 2;
-    const currentPageNum = pagination.currentPage;
+    const currentPageNum = pagination.pageNum;
     const totalPagesCount = pagination.pagesCount;
 
     const first = currentPageNum - visiblePagesRange > 2 ? currentPageNum - visiblePagesRange : 1;
     const last = currentPageNum + visiblePagesRange < totalPagesCount - 1 ? currentPageNum + visiblePagesRange : totalPagesCount;
 
-    const onItemClick = (value, currentPage) => {
-        console.log(value, currentPage)
-        value == currentPage && onChangePage(Number(value))
+    const onItemClick = (value, pageNum) => {
+        console.log(value, pageNum)
+        value == pageNum || onPageChange(Number(value))
     }
-    function pushNewItem(items, value, currentPage) {
+    function pushNewItem(items, value, pageNum) {
         items.push((
-            <p key = {items.length} onClick = {() => onItemClick(value, currentPage)} className = {getThemedClassName([
+            <p key = {items.length} onClick = {() => onItemClick(value, pageNum)} className = {getThemedClassName([
                 'grid__pagination-item',
                 `grid__pagination-item_${
-                    (value === currentPage && 'current')
+                    (value === pageNum && 'current')
                     || (typeof value === 'number' && 'cliclable')
                 }`],
                 classModificator

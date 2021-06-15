@@ -75,15 +75,38 @@ const fetchColumnsFailed = (error) => ({
 })
 
 ///////////////////////////////////////////
-
-export const fetchOrders = () => 
+const PAGE_CAPACITY = 4;
+export const fetchOrders = (pageNum) => 
     dispatch => {
         dispatch(fetchOrdersStarted());
         sendRequest({
-            get: ['orders']
+            get: [{ name: 'orders', pageNum, pageCapacity: PAGE_CAPACITY}]
         }).then(response => {
             response.json().then(r => {
-                dispatch(fetchOrdersSucceed(r.orders))
+                const { orders, pageNum, pagesCount } = r.orders;
+                dispatch(fetchOrdersSucceed(orders, pageNum, pagesCount))
+            }).catch(e => console.log(e))
+        }).catch(error => {
+            dispatch(fetchOrdersFailed(error))
+        })
+    }
+
+
+export const removeOrders = (ids, pageNum) => 
+    dispatch => {
+        dispatch(fetchOrdersStarted());
+        sendRequest({
+            do: [
+                {
+                    delete: ids,
+                    name: 'orders'
+                }
+            ],
+            get: [{ name: 'orders', pageNum, pageCapacity: PAGE_CAPACITY}]
+        }).then(response => {
+            response.json().then(r => {
+                const { orders, pageNum, pagesCount } = r.orders;
+                dispatch(fetchOrdersSucceed(orders, pageNum, pagesCount))
             }).catch(e => console.log(e))
         }).catch(error => {
             dispatch(fetchOrdersFailed(error))
@@ -94,9 +117,9 @@ const fetchOrdersStarted = () => ({
     type: actionTypes.ORDERS_LOADING_STARTED
 })
 
-const fetchOrdersSucceed = (orders) => ({
+const fetchOrdersSucceed = (orders, pageNum, pagesCount) => ({
         type: actionTypes.ORDERS_LOADING_SUCCEED,
-        payload: { isLoading: false, orders }
+        payload: { isLoading: false, orders, pageNum, pagesCount }
     }
 )
 

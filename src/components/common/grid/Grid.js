@@ -8,13 +8,8 @@ import { getThemedClassName } from "../../../common/utils";
 import { useState } from "react";
 
 export function Grid(props) {
-    const [state, setState] = useState(
-        {selected: [], pagination: {
-            pagesCount: 10, 
-            currentPage: 5
-        }
-    })
-    const {columns, rows, classModificator} = props;
+    const {columns, rows, classModificator, onPageChange, pagination, onDeleteRows} = props;
+    const [state, setState] = useState({selected: [] })
     const gridManager = new GridManager(columns);
     const onHeaderCheck = (checked) => {
         if(checked)
@@ -24,18 +19,17 @@ export function Grid(props) {
     }
     const onRowCheck = (checked, rowId) => {
         if(!checked) {
-            console.log({...state, selected: state.selected.filter(id => id !== rowId)})
             setState({...state, selected: state.selected.filter(id => id !== rowId)})
         } else {
             const selected = state.selected;
             selected.push(rowId)
-            console.log({...state, selected})
             setState({...state, selected})
         }
     }
 
-    const onChangePage = (currentPage) => {
-        setState({...state, pagination: {...state.pagination, currentPage}})
+    const onDeleteSelected = () => {
+        onDeleteRows && onDeleteRows(state.selected)
+        setState({...state, selected: []})
     }
 
     return (
@@ -55,7 +49,11 @@ export function Grid(props) {
                 ))}
                 </div>
             </div>
-            <GridFooter pagination = {state.pagination} onChangePage = {onChangePage} selectedCount = {state.selected.length} classModificator = {classModificator} />
+            <GridFooter pagination = {pagination} 
+                onPageChange = {onPageChange}
+                onDeleteSelected = {onDeleteSelected} 
+                selectedCount = {state.selected.length} 
+                classModificator = {classModificator} />
         </div>
     );
 }
